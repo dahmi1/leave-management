@@ -47,7 +47,7 @@
                                 @foreach ($employees as $employee)
                                 <tr>
                                     <td><a href="Employees/{{ $employee->id }}"> {{$employee->workId}} </a></td>
-                                    <td><img src="https://i.imgur.com/VKOeFyS.png" width="25"><a href="http://leave-managment.test/profile" style="text-decoration: underline; color: black;">{{$employee->firstName}}</a></td>
+                                    <td><img src="https://i.imgur.com/VKOeFyS.png" width="25"><a href="Employees/{{ $employee->id }}" style="text-decoration: underline; color: black;">      {{$employee->firstName}}</a></td>
                                     <td>15 يوماً</td>
                                     <td><span class="badge text-bg-success">كثير</span></td>
                                 </tr>
