@@ -13,14 +13,15 @@ return new class extends Migration
     {
         Schema::create('employee', function (Blueprint $table) {
             $table->id();
-            $table->string('workId', 255); // i put it in a string datatype because i don't want to do arethmetic operation on them
+            $table->string('workId', 255)->unique(); // i put it in a string datatype because i don't want to do arethmetic operation on them
             $table->string('firstName', 255);
+            $table->string('middleName', 255);
             $table->string('lastName', 255);
-            $table->string('email', 255);
-            $table->string('phoneNo', 10); // i put it in a string datatype because i don't want to do arethmetic operation on them
+            $table->string('email', 255)->unique();
+            $table->string('phoneNo', 10)->unique(); // i put it in a string datatype because i don't want to do arethmetic operation on them
             $table->string('position', 255);
             $table->string('sector', 255);
-            $table->string('nationalId', 10); // i put it in a string datatype because i don't want to do arethmetic operation on them
+            $table->string('nationalId', 10)->unique(); // i put it in a string datatype because i don't want to do arethmetic operation on them
             $table->date('joined');
             $table->date('dateOfBirth');
             $table->timestamps();

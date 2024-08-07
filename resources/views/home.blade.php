@@ -9,6 +9,10 @@
                         <h1> إبحث عن موظف </h1>
                     </label>
                     <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="إبحث...">
+                    <button class="btn btn-outline-success my-2" type="button">
+                        <i class="fa fa-search"></i> البحث 
+                    </button>
+
                     <datalist id="datalistOptions">
                         <option value="San Francisco">
                         <option value="New York">
@@ -16,9 +20,10 @@
                         <option value="Los Angeles">
                         <option value="Chicago">
                     </datalist>
-                    <button class="btn btn-outline-success my-2" type="button">
-                        <i class="fa fa-search"></i> Search
-                    </button>
+
+                    <a href="addNewEmployee" class="btn btn-outline-primary my-2" type="button">
+                        <i class="fa fa-search"></i> إضافة موظف جديد 
+                    </a>
                     <div>
 
                     </div>
@@ -46,10 +51,8 @@
                             <tbody>
                                 @foreach ($employees as $employee)
                                 <tr>
-                                    <td><a href="Employees/{{ $employee->id }}"> {{$employee->workId}} </a></td>
-                                    <td><img src="https://i.imgur.com/VKOeFyS.png" width="25"><a href="Employees/{{ $employee->id }}" style="text-decoration: underline; color: black;">      {{$employee->firstName}}</a></td>
-                                    <td>15 يوماً</td>
-                                    <td><span class="badge text-bg-success">كثير</span></td>
+                                    <td><a href="Employees/{{ $employee->id }}"> {{ $employee->workId ?? 'no id'}} </a></td>
+                                    <td><img src="https://i.imgur.com/VKOeFyS.png" width="25"><a href="Employees/{{ $employee->id }}" style="text-decoration: underline; color: black;">      {{ $employee->firstName }}</a></td> <td>15 يوماً</td> <td><span class="badge text-bg-success">كثير</span></td>
                                 </tr>
                                 @endforeach
                             </tbody>
